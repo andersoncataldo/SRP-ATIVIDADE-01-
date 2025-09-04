@@ -1,35 +1,37 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Turma{
-    private List<Aluno> alunos = new ArrayList<>();
+public class Turma {
 
-    private List<Aluno> listAlunos;
-    private TurmaDado Tdado;
+    private List<Aluno> ListaAlunos = new ArrayList<>();
 
-    public Turma(){
-        Tdado = new TurmaDado();
-        listAlunos = Tdado.load();
+    public Turma() {
+
     }
 
-    public double calcMedia(){
-        return 0.0;
+    public double calcularMedia() {
+        double soma = 0;
+        for(Aluno aluno : ListaAlunos) {
+            soma += aluno.getNota();
+        }
+        return soma / ListaAlunos.size();
     }
 
-    public List<Aluno> getAlunos(){
-        return null;
+    public List<Aluno> getAlunos() {
+        return ListaAlunos;
     }
 
-    public int getTotalAlunos(){
-        int tamanho = this.listAlunos.size();
+    public int getTotalAlunos() {
+        int tamanho = ListaAlunos.size();
         return tamanho;
     }
 
-    public Aluno add(Aluno a){
+    public Aluno add(Aluno a) {
+        ListaAlunos.add(a);
         return a;
     }
-
-    public void delete(Aluno a){
+    public void delete(Aluno a) {
+        ListaAlunos.remove(a);
     }
 
 }
