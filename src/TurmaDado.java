@@ -1,31 +1,25 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-public class TurmaDado{
+public class TurmaDado {
 
-    public List<Aluno> listaDado = new ArrayList<Aluno>();
+    List<Aluno> listaDados = new ArrayList<Aluno>();
 
-    public List<Aluno> load(){
-        List<Aluno> ListaDado = new ArrayList<Aluno>();
-        return ListaDado;
-
+    public List<Aluno> load() {
+        return listaDados;
     }
-
-    public void save(Aluno a){
-    listaDado.add(a);
+    public void save(Aluno a) {
+        listaDados.add(a);
     }
-
-    public void update(String matricua, Aluno alunoAtualizado){
-        for (int i=0; i<listaDado.size(); i++){
-            Aluno aluno = listaDado.get(i);
-            if (aluno.getMatricula().equals(matricua)){
-                listaDado.set(i, alunoAtualizado);
+    public void update(String matricula, Aluno alunoAtualizado) {
+        for(int i = 0; i<listaDados.size(); i++) {
+            Aluno aluno = listaDados.get(i);
+            if(aluno.getMatricula().equals(matricula)) {
+                listaDados.set(i, alunoAtualizado);
             }
         }
     }
-
-    public void delete(Aluno a){
-        listaDado.remove(a);
+    public void delete(Aluno a) {
+        listaDados.remove(a);
     }
-
 }
